@@ -1,0 +1,36 @@
+
+if (CHECK_HEADER("main/php.h") && CHECK_LIB(PHP_LIB) &&
+	(PHP_GTK_LIBVERSION > 2.11 || (CHECK_HEADER("iconv.h") && CHECK_LIB("iconv.lib", "php-gtk"))) &&
+	CHECK_HEADER("libintl.h") && CHECK_LIB("intl.lib", "php-gtk") &&
+	CHECK_HEADER("atk/atk.h") && CHECK_LIB("atk-1.0.lib", "php-gtk") &&
+	CHECK_HEADER("glib.h") && CHECK_LIB("glib-2.0.lib", "php-gtk") &&
+	CHECK_HEADER("gmodule.h") && CHECK_LIB("gmodule-2.0.lib", "php-gtk") &&
+	CHECK_HEADER("glib/gthread.h") && CHECK_LIB("gthread-2.0.lib", "php-gtk") &&
+	CHECK_HEADER("glib-object.h") && CHECK_LIB("gobject-2.0.lib", "php-gtk") &&
+	CHECK_HEADER("pango/pango.h") && CHECK_LIB("pango-1.0.lib", "php-gtk") &&
+	CHECK_HEADER("pango/pangowin32.h") && CHECK_LIB("pangowin32-1.0.lib", "php-gtk") &&
+	CHECK_HEADER("gdk-pixbuf/gdk-pixbuf.h") && CHECK_LIB("gdk_pixbuf-2.0.lib", "php-gtk") &&
+	CHECK_HEADER("gdk/gdk.h") && CHECK_LIB("gdk-win32-2.0.lib", "php-gtk") &&
+	CHECK_HEADER("gtk/gtk.h") && CHECK_LIB("gtk-win32-2.0.lib", "php-gtk")) {
+
+		ADD_FLAG("CFLAGS_PHP_GTK", "/I ext\\gtk+ /I ..\\ext\\gtk+ /D HAVE_PHP_GTK=1");
+
+		EXTENSION("php-gtk", "gen_atk.c gen_gdk.c gen_gtk.c gen_pango.c php_gdk.c php_gtk+.c php_gtk+_types.c phpg_custom_tree_model.c", true); // always shared
+
+		AC_DEFINE("HAVE_PHP_GTK", 1, "PHP-GTK enabled");
+
+		/* Create the file if it doesn't exist */
+		var temp = FSO.OpenTextFile("win32\\temp.bat", 8);
+		/* generate source and header files for exported PHP-GTK functions */
+		temp.WriteLine("/* usage: php generator.php [-l logfile] [-o overridesfile] [-p prefix] [-c functionclass ] [-r typesfile] [-f savefile] [-v gtklibversion] defsfile */");
+		temp.WriteLine("mkdir win32\\logs");
+		temp.WriteLine("php -q generator\\generator.php -l win32\\logs\\config_atk.log -o ext\\gtk+\\atk.overrides -p atk ext\\gtk+\\atk.defs -v " + PHP_GTK_LIBVERSION + " > ext\\gtk+\\gen_atk.c");
+		temp.WriteLine("php -q generator\\generator.php -l win32\\logs\\config_pango.log -o ext\\gtk+\\pango.overrides -p pango ext\\gtk+\\pango.defs -v " + PHP_GTK_LIBVERSION + " > ext\\gtk+\\gen_pango.c");
+		temp.WriteLine("php -q generator\\generator.php -l win32\\logs\\config_gdk.log -o ext\\gtk+\\gdk.overrides -p gdk -r ext\\gtk+\\atk-types.defs -v " + PHP_GTK_LIBVERSION + " -r ext\\gtk+\\pango-types.defs ext\\gtk+\\gdk.defs > ext\\gtk+\\gen_gdk.c");
+		temp.WriteLine("php -q generator\\generator.php -l win32\\logs\\config_gtk.log -o ext\\gtk+\\gtk.overrides -p gtk -r ext\\gtk+\\atk-types.defs -v " + PHP_GTK_LIBVERSION + " -r ext\\gtk+\\pango-types.defs -r ext\\gtk+\\gdk-types.defs ext\\gtk+\\gtk.defs > ext\\gtk+\\gen_gtk.c");
+		temp.WriteLine('grep -h "^PHP_GTK_EXPORT_CE" ext\\gtk+\\gen_atk.c | sed -e "s/^/PHP_GTK_API extern /" > ext\\gtk+\\gen_atk.h');
+		temp.WriteLine('grep -h "^PHP_GTK_EXPORT_CE" ext\\gtk+\\gen_pango.c | sed -e "s/^/PHP_GTK_API extern /" > ext\\gtk+\\gen_pango.h');
+		temp.WriteLine('grep -h "^PHP_GTK_EXPORT_CE" ext\\gtk+\\gen_gdk.c | sed -e "s/^/PHP_GTK_API extern /" > ext\\gtk+\\gen_gdk.h');
+		temp.WriteLine('grep -h "^PHP_GTK_EXPORT_CE" ext\\gtk+\\gen_gtk.c | sed -e "s/^/PHP_GTK_API extern /" > ext\\gtk+\\gen_gtk.h');
+		temp.Close();
+}

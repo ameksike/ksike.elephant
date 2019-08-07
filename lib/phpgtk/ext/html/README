@@ -1,0 +1,16 @@
+LICENSE: GPL
+
+AUTHORS:
+    Anders Carlsson <andersca@gnu.org> (initial KHTMLW port)
+    Ettore Perazzoli <ettore@ximian.com> (generic hacking, editing)
+    Jonas BorgstrAm <jonas_b@bitsmart.com> (form support)
+    Radek Doulik <rodo@ximian.com> (bug fixes)
+    Larry Ewing <lewing@ximian.com> (bug fixes)
+    Miguel de Icaza <miguel@ximian.com> (HTMLPainter)
+
+URL: http://ftp.gnome.org/pub/GNOME/sources/gtkhtml/3.0/
+
+GtkHTML is a widget that provides HTML rendering and editing capabilities.
+
+Precompiled windows binaries can be found at ftp://ftp.gnome.org/pub/gnome/binaries/win32/gtkhtml/
+Remember there are many dependencies including gconf and libbonobo

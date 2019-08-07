@@ -1,0 +1,81 @@
+/*
+ * 
+ * Custom thumbnail icons for BHike Toolkit
+ * 
+ * */
+
+.icon-back{
+        background-image: url(../img/defaults/app-icons/icon-back.png) !important ;
+}
+
+.icon-collapse-all{
+        background-image: url(../img/defaults/app-icons/icon-collapse-all.png) !important ;
+}
+
+.icon-expand-all{
+        background-image: url(../img/defaults/app-icons/icon-expand-all.png) !important ;
+}
+
+.icon-foward{
+	background-image: url(../img/defaults/app-icons/icon-foward.png) !important ;
+}
+
+.icon-menuabout{
+	background-image: url(../img/defaults/app-icons/icon_menuAbout.png) !important ;
+}
+
+.icon-menudirect{
+	background-image: url(../img/defaults/app-icons/icon_menuDirect.png) !important ;
+}
+
+.icon-menuemail{
+	background-image: url(../img/defaults/app-icons/icon_menuEmail.png) !important ;
+}
+
+.icon-menuexit{
+	background-image: url(../img/defaults/app-icons/icon_menuExit.png) !important ;
+}
+
+.icon-menuhelp{
+	background-image: url(../img/defaults/app-icons/icon_menuHelp.png) !important ;
+}
+
+.icon-menuhomepage{
+	background-image: url(../img/defaults/app-icons/icon_menuHomePage.png) !important ;
+}
+
+.icon-recent{
+	background-image: url(../img/defaults/app-icons/icon_recent.png) !important ;
+}
+
+.icon-refresh{
+	background-image: url(../img/defaults/app-icons/icon_refresh.png) !important ;
+}
+
+.icon-reload{
+	background-image: url(../img/defaults/app-icons/icon-reload.png) !important ;
+}
+
+.icon-save{
+	background-image: url(../img/defaults/app-icons/icon_save.png) !important ;
+}
+
+.icon-savedata{
+	background-image: url(../img/defaults/app-icons/icon_saveData.png) !important ;
+}
+
+.icon-savesettings{
+	background-image: url(../img/defaults/app-icons/icon_saveSettings.png) !important ;
+}
+
+.icon-savetofile{
+	background-image: url(../img/defaults/app-icons/icon_saveToFile.png) !important ;
+}
+
+.icon-tipofday{
+	background-image: url(../img/defaults/app-icons/icon_tipOfDay.png) !important ;
+}
+
+.icon-up{
+    	background-image: url(../img/defaults/app-icons/icon-up.png) !important ;
+}

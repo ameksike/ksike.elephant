@@ -1,0 +1,17 @@
+
+En este apartado se debe incluir los elementos que permitan describir la tecnología:
+
+
+División en capas del modelo de implementación para Ksike:
+-----------------------		-----------------------
+src | log | cfg | mtd  	<->	estructuras fisicas
+-----------------------		-----------------------
+base | package | filter	<->	estructuras	logicas
+-----------------------		-----------------------
+client | common | server<->	modelo cliente-servidor
+-----------------------		-----------------------
+js | php | python | c++	<->	lenguajes / tecnologias
+-----------------------		-----------------------
+
+Tesis Maestría/Doctoral: Modelo de enseñanza practico para las asignaturas de programación/ingeniería del software sobre Ksike, como framework con un marcado enfoque académico, teniendo en cuenta el soporte para varios leguajes de programación, arquitectura única independiente de la plataforma, mecanismos para redefinición de nuevas arquitecturas, esquema de trabajo y metodología de desarrollo.
+ 

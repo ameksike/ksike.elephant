@@ -1,0 +1,64 @@
+-----------------------------------------------------
+
+lib
+	cfg
+	mtd
+	log
+	ass
+		lib
+		plugin
+	src
+		server
+		client
+		common
+	
+
+Concepto de bibliotecas en ksike
+	library			-- component
+		kernel 		-- horizontal
+			package -- internos 
+			driver	-- externos
+
+		aplication 	-- vertical
+			app		-- compuestos
+			plugin	-- simples
+			
+	denominacion
+	version
+	descripcion
+	autores
+	fecha creacion
+	fecha de actualizacion
+	configuracion [e1, e2, etc]
+	dependencia
+-----------------------------------------------------
+logo pal bhike un bastoon de shaman
+
+
+toolkit 	
+library
+bundle		----	library
+package 
+driver
+plugin
+module
+component 
+
+respond
+request
+
+assembly
+part
+element
+piece
+
+driven-impulsado
+driver-conductor
+------------------------------------------------------
+* Ensamblado en programación de sistemas informáticos o software de programación un ensamblado o assembly, es una colección de uno o más archivos o ficheros, agrupados juntos para formar una unidad lógica.
+* Componente de Software, un elemento de un sistema software que ofrece un conjunto de servicios, o funcionalidades, a través de interfaces definidas.
+* module o módulo: es una parte autónoma de un programa de ordenador, un módulo de núcleo es aquel que extiende las funcionalidades del núcleo de un sistema operativo.
+* plugin o complemento: plug-in (del inglés «[un] enchufable o inserción»), add-on («añadido»), conector o extensión.
+es una aplicación que se relaciona con otra para aportarle una función nueva y generalmente muy específica. Esta aplicación adicional es ejecutada por la aplicación principal e interactúan por medio de la API. 
+* library: una biblioteca es un conjunto de subprogramas utilizados para desarrollar software. 
+* toolkit (conjunto, equipo, maletín, caja, estuche, juego (kit) de herramientas).

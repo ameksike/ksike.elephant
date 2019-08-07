@@ -1,0 +1,18 @@
+Maybe I don't fully grok the context of why you think you need to do this, but I don't think the reasons you posted are particularly compelling.
+
+   1.
+
+      Not very many web apps are CPU-bound, so I don't think you'll be impressed by the boost in performance. Compiling it down to native code isn't going to make your I/O or DB waits any shorter. There are better ways to scale a web app than moving to C++, and most of them involve reducing the time your script is waiting for data from the DB or disk (such as sharding your DB or moving data into a RAM cache).
+   2.
+
+      Are the library dependencies really that much of an issue? Many of the most popular libraries are bundled with the PHP core now, plus any additional ones are generally a cinch to install. Once you've got 'em, you don't touch 'em, so I'm not sure why this is a particularly compelling reason to move to C++.
+   3.
+
+      This is actually a very BAD reason to move to C++. Most shared hosting environments will let you run scripts in a PHP environment, but very few to none (unless you're looking at a VPS) will let you run an arbitrary binary like you'll have with a C++ app. There are better ways to control source readability in shared environments, like using file permissions correctly. If you're worried about clients stealing your PHP code, well, too bad. You can try to obfuscate it all you want, but it's generally pointless at the end of the day.
+   4.
+
+      What specific C++ features do you so desperately need that PHP does not offer? To be honest, the idea of your average PHP coder mucking about with pointers and memory allocation scares the sh*t out of me. There are very good frameworks available for PHP, and I'd suggest you completely exhaust all of those options before you turn to changing the language of your entire code base just for some features you like in particular framework.
+   5.
+
+      You mentioned cross-platform compatibility in your comment... PHP is honestly going to make this easier than C++ is. The PHP implementation is relatively standardized across platforms (except for a few lower-level functions) whereas you are likely going to be using a different compiler and system calls in C++.
+

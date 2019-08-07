@@ -1,0 +1,13 @@
+#!/bin/sh 
+#
+# $Id: config-stubs,v 1.9 2007/02/05 17:14:43 andrei Exp $
+
+dir=$1; shift
+
+echo "sinclude([$dir/gtk+/config.m4])"
+for stubfile in $dir/*/config.m4; do
+    dir=`echo $stubfile | sed -e 's#.*/\([^/]*\)/.*#\1#'`
+    if test "$dir" != "gtk+"; then
+		echo "sinclude([$stubfile])"
+    fi
+done

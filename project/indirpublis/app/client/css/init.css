@@ -1,0 +1,42 @@
+ #header-div{
+    border:0 none;
+    background:#1E4176 url("../img/defaults/hd-bg.gif") repeat-x 0 0;
+    padding-top:3px;
+    padding-left:3px;
+}
+.docs-header .x-panel-body {
+    background:transparent;
+}
+
+.title-darkblue{
+	border:0 none;
+    background:#1E4176 url("../img/defaults/hd-bg.gif") repeat-x 0 0;
+    color:white;
+    font-weight:bold;
+}
+
+#header-div .api-title {
+    font:normal 16px tahoma, arial, sans-serif;
+    color:white;
+    margin:5px 0px;
+    text-align:center;
+    height: 25px;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+}
+
+#start-page
+{
+	
+}
+
+.start-page-header
+{
+	/*background: transparent url("../img/defaults/startpage-h.png") no-repeat 0 0;	*/
+	background:transparent url("../img/defaults/hd-bg.gif") repeat-x 0 0;
+	color:white;
+	height:30px;
+	width:auto;
+	border:transparent;
+}

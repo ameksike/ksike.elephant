@@ -1,0 +1,43 @@
+[
+	{
+		"name": "cfg",
+		"value":[
+			{
+				"name": "driver",
+				"type": "collection"
+				"caption": "Driver de ccae",
+				"description": "",
+				"values": ["html", "json", "img", "xml"]
+			},{
+				"name": "type",
+				"type": "selection"
+				"caption": "tipo de intanciacion del paquete",
+				"description": "",
+				"values": ["object","class"]
+			},{
+				"name": "load",
+				"type": "boolean"
+				"caption": "metodo de carga",
+				"description": "",
+				"values": ["manual","auto"]
+			}
+		]	
+	},{
+		"name": "mod",
+		"value":[
+			{
+				"name": "driver",
+				"type": "collection"
+				"caption": "Driver de ccae",
+				"description": "",
+				"values": ["html", "json", "img", "xml"]
+			},{
+				"name": "base",
+				"type": "collection"
+				"caption": "Librerias bases",
+				"description": "",
+				"values": ["OutDriver"]
+			}
+		]
+	}
+]

@@ -1,0 +1,18 @@
+{
+	"ioc":{
+		"server":"localhost",
+		"name":"work",
+		"port":"5432",
+		"user":"postgres",
+		"passw":"postgres"
+	},
+	"cat": {
+		"name":"qba.map",
+		"path":"server\/common\/data\/"
+	},
+	"sulf":[
+		"intest",	
+		"distss",
+		"gatimm",
+	]
+}

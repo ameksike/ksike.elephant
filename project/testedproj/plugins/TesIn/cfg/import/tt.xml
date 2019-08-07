@@ -1,0 +1,52 @@
+
+<root>
+	<import>it</import>
+	
+	<db>
+		<server>localhost</server>
+		<name>work</name>
+		<port>5432</port>
+		<user>postgres</user>
+		<passw>postgres</passw>
+	</db>
+	<map>
+		<name>qba.map</name>
+		<path>server/common/data/</path>
+	</map>
+	<df>
+		<app>app/</app>
+		<plugins>plugins/</plugins>
+		<lib>lib/</lib>
+		<web></web>
+		<request>
+			<key>
+				<proj></proj>
+				<controller>Main</controller>
+				<action>index</action>
+				<params></params>
+			</key>
+		</request>
+	</df>
+	<sxx>
+		<app>mstttapp/</app>
+		<plugins>plugins/</plugins>
+		<lib>lib/</lib>
+		<web></web>
+		<request>
+			<key>
+				<proj></proj>
+				<controller>Main</controller>
+				<action>index</action>
+				<params></params>
+			</key>
+		</request>
+	</sxx>
+	<tim>
+		<request>
+			<key>
+				<params>RR</params>
+			</key>
+		</request>
+	</tim>
+</root>
+

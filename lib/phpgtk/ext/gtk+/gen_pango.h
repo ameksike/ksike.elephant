@@ -1,0 +1,17 @@
+extern PHP_GTK_EXPORT_CE(pangocontext_ce);
+extern PHP_GTK_EXPORT_CE(pangofont_ce);
+extern PHP_GTK_EXPORT_CE(pangofontface_ce);
+extern PHP_GTK_EXPORT_CE(pangofontfamily_ce);
+extern PHP_GTK_EXPORT_CE(pangofontmap_ce);
+extern PHP_GTK_EXPORT_CE(pangofontset_ce);
+extern PHP_GTK_EXPORT_CE(pangofontsetsimple_ce);
+extern PHP_GTK_EXPORT_CE(pangolayout_ce);
+extern PHP_GTK_EXPORT_CE(pangoattrlist_ce);
+extern PHP_GTK_EXPORT_CE(pangocolor_ce);
+extern PHP_GTK_EXPORT_CE(pangofontdescription_ce);
+extern PHP_GTK_EXPORT_CE(pangofontmetrics_ce);
+extern PHP_GTK_EXPORT_CE(pangoglyphstring_ce);
+extern PHP_GTK_EXPORT_CE(pangolanguage_ce);
+extern PHP_GTK_EXPORT_CE(pangolayoutiter_ce);
+extern PHP_GTK_EXPORT_CE(pangotabarray_ce);
+extern PHP_GTK_EXPORT_CE(pango_ce);

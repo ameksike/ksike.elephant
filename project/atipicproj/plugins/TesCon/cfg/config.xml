@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<core>Primal.php</core>
+	<core>Linker.php</core>
+	<interface>Auth.php</interface>
+
+	<con>
+		<server>config</server>
+		<name>tester</name>
+		<port>module</port>
+		<user>postgres</user>
+		<passw>postgres</passw>
+	</con>
+
+	<map>
+		<name>qba.map</name>
+		<path>server/common/data/</path>
+	</map>
+
+	<mods>Layer</mods>
+	<mods>Map</mods>
+	<mods>Navigation</mods>
+	<mods>Info</mods>
+	<mods>Perfil</mods>
+	<mods>Query</mods>
+	<mods>ThematicRaster</mods>
+	<mods>Contour</mods>
+</root>

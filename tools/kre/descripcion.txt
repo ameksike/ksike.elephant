@@ -1,0 +1,2 @@
+
+KRE acrónimo de Ksike Runtime Environment, en español Entorno de ejecución para Ksike: es un conjunto de utilidades que permite la ejecución de programas desarrollados sobre Ksike.

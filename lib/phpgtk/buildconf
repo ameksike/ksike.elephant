@@ -1,0 +1,27 @@
+#!/bin/sh
+# $Id: buildconf,v 1.6 2005/06/02 19:16:25 sniper Exp $
+
+rm -f build2/generated_lists
+
+# If there is no environment variable, fallback using phpize in PATH
+test -z "$PHPIZE" && PHPIZE=phpize
+
+for bc_option
+do
+	bc_optarg=`expr "x$bc_option" : 'x[^=]*=\(.*\)'`
+
+	case $bc_option in
+		--with-phpize=*)
+		if [ "x$bc_optarg" != "x" ]; then
+			rm -f buildmk.stamp
+			PHPIZE=$bc_optarg
+		fi
+		;;
+	esac
+done
+
+# Disable running autoconf/autoheader in phpize
+PHPIZE="PHP_AUTOCONF=\"touch configure\" PHP_AUTOHEADER=\"touch config.h.in\" $PHPIZE"
+
+PHPIZE=$PHPIZE ${MAKE:-make} -s -f build2/build.mk
+

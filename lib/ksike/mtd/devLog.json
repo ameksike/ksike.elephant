@@ -1,0 +1,113 @@
+"devLog":{
+{
+		'issue': 'Client API 1.1',
+		'description': 'Refactorizar el codigo fuente en funcion de la parte cliente',
+		'status': 'develop',
+		'dateIn': '2012/05/15',
+		'dateOut': '2013/04/12',
+		'task': [			
+			{ "status": "ok%",  "description": "Correccion del API cliente en funcion del loader" },
+			{ "status": "70%",  "description": "Gestion de exepciones en el cliente" },
+			{ "status": "20%",  "description": "implementar un simil al pathinfo de php en el Kcl.Core.js" },
+			{ "status": "70%",  "description": "Refactorizar los espacios de nombre para los patrones" },
+			{ "status": "60%",  "description": "Definir tres mecanismos de gestion de mensajes del servidor via ajax: centralizado, descentralizado, mixto" },
+			{ "status": "00%",  "description": "Incorporar el empleo de espacios de nombres" },
+			{ "status": "00%",  "description": "Refactorizar el loader en funcion de los namespace" },
+			{ "status": "00%",  "description": "Implementar soporte de callback para peticiones ajax" },
+			{ "status": "00%",  "description": "Incorporar soporte para el embio por los distintos metodos de envio" },
+			{ "status": "00%",  "description": "implementar soporte para respuestas de tipo REST" },
+			{ "status": "00%",  "description": "" },
+			{ "status": "00%",  "description": "" },
+			{ "status": "00%",  "description": "" },
+		]
+	},{
+		'issue': 'Server API  1.1',
+		'description': 'Refactorizar el codigo fuente en funcion de la parte servidora',
+		'status': 'develop',
+		'dateIn': '2011/11/25',
+		'dateOut': '2013/04/12',
+		'task': [			
+			{ "status": "ok%",  "description": "Correccion del recurso de directorio para win2" },
+			{ "status": "ok%",  "description": "Definicion del mecanismo de metadatos" },
+			{ "status": "ok%",  "description": "Transformar a paquetes los driver: Out, Config" },
+			{ "status": "ok%",  "description": "Carga de forma dinámica para las librerías del core" },
+			{ "status": "ok%",  "description": "Definir arquitectura en función de soportar desarrollo orientado a dispositivos Móviles" },
+			{ "status": "ok%",  "description": "Refactorizar en función de una clase Singeton y su empleo por herencia" },
+			{ "status": "ok%",  "description": "Corregir el Loader e incorporarle mecanismo de subscripción ***" },
+			{ "status": "ok%",  "description": "Definir la redefinición de comportamiento a través de hots o ganchos ***" },
+			{ "status": "ok%",  "description": "Incorporar lectura de Pretty url o Semanticas" },
+			{ "status": "ok%",  "description": "Incorporar soporte para la directiva import en los fichero de configuracion" },
+			{ "status": "ok%",  "description": "Incluir acceso del log mediante el Asistente" },
+			{ "status": "ok%",  "description": "Valorar si crear o no un recurso de admin de directorios" },
+			{ "status": "ok%",  "description": "Corregir bug en el Loader linea 123" },
+			{ "status": "90%",  "description": "Incorporar tratamiento de errores de forma dinámica" },
+			{ "status": "90%",  "description": "Incorporar soporte para el driver de formato en función de (xml, ini, yml)" },
+			{ "status": "80%",  "description": "Correccion de la configuracion del servidor" },
+			{ "status": "80%",  "description": "Incorporar mecanismo de publicacion (total, parcial, nula)  ***" },
+			{ "status": "80%",  "description": "Corregir el sistema de generacion de logs, modificar el path de estatico a relativo" },
+			{ "status": "30%",  "description": "Incorporar mecanismo de salvado para el paquete configuracion" },
+			{ "status": "40%",  "description": "Corregir el sistema de detencion de errores (modulos no existentes, acciones invalidas, mayor cantidad de parametros en el request de los definidos en el patron)" },
+			{ "status": "00%",  "description": "Incorporar mecanismo de autoload (include) driver and packages" },
+			{ "status": "00%",  "description": "Implementar un package para el manejo de los metadatos" },
+			{ "status": "00%",  "description": "Refactorizar el sitema de enrutamiento y carga en funcion del proyecto" },
+			{ "status": "00%",  "description": "Correccion del recurso de publicacion (publisher) para win2 " },
+			{ "status": "00%",  "description": "Soporte del patron Composite Application: Garantizar niveles infinitos de empaquetamiento (Modulos de Modulos)" },
+			{ "status": "00%",  "description": "Refactorizar los espacios de nombre para los patrones" },
+			{ "status": "00%",  "description": "Incorporar el empleo de espacios de nombres" },
+			{ "status": "00%",  "description": "Incorporar mecanismo para la gestión de de cache por peticiones " },
+			{ "status": "00%",  "description": "Desarrollar un driver o packages que permita utilizar la libbreria Cache_Lite-1.7.15.tgz" },
+			{ "status": "00%",  "description": "Definir una taxonomia estandar para: package, driver, plugins" },
+		]
+	},{
+		'issue': 'Acceso a datos',
+		'description': 'Proceso de estabilizacion de la capa de acceso a datos',
+		'status': 'develop',
+		'dateIn': '',
+		'dateOut': '',
+		'task': [			
+			{ "status": "00%",  "description": "Desarrollar driver para incorporar Doctrine 2" },
+			{ "status": "00%",  "description": "Desarrollar driver para incorporar Propel 1.6 " }
+		]
+	},{
+		'issue': 'Patrones de integracion',
+		'description': 'Definir un mecanismos que garanticen la integracion a alto nivel ',
+		'status': 'develop',
+		'dateIn': '',
+		'dateOut': '',
+		'task': [			
+			{ "status": "00%",  "description": "Refactorizar el paquete IoC en funcion del soporte de inyeccion de dependencias" },
+			{ "status": "00%",  "description": "Incluir mecanismo de factorizacion de servicios similar a symfony2" },
+			{ "status": "00%",  "description": "Incluir mecanismo de ejecucion de funciones similar a symfony2" },
+			{ "status": "00%",  "description": "Incluir mecanismo de ejecucion deextension de servicios similar a symfony2" },
+			{ "status": "00%",  "description": "ESB: Mecanismo de administración de mensajes(tipos de mensajes, cuerpo, encabezado)" },
+			{ "status": "00%",  "description": "Implementar una capa REST" },
+			{ "status": "00%",  "description": "Gestionar mecanismos de eventos (S&S)" },
+
+		]
+	},{
+		'issue': 'Seguridad',
+		'description': 'Definir un mecanismos de seguridad',
+		'status': 'develop',
+		'dateIn': '',
+		'dateOut': '',
+		'task': [			
+			{ "status": "00%",  "description": "Refactorizar el mecanismo de seguridad" },
+			{ "status": "00%",  "description": "Refactorizar el mecanismo para trabajo con sesiones" },
+			{ "status": "00%",  "description": "Implementar un driver para utilizar la libreria ulogin version 0.6 o superior" }
+		]
+	},{
+		'issue': 'Other',
+		'description': 'Tareas complementarias',
+		'status': 'investigacion',
+		'dateIn': '',
+		'dateOut': '',
+		'task': [			
+			{ "status": "00%",  "description": "Actualizar el blog: http://m3rm4.wordpress.com/" },
+			{ "status": "00%",  "description": "Diseñar la capa que soporte el lenguaje Python" },
+			{ "status": "00%",  "description": "Diseñar la capa que soporte el lenguaje javascript en el servidor nodejs" },
+			{ "status": "00%",  "description": "Estudiar posible integracion con phpDocumentor" },
+			{ "status": "00%",  "description": "Estudiar posible integracion con phpUnit" },
+			{ "status": "00%",  "description": "Estudiar posible integracion con servidores para garantizar el modelo de desarrollo de Integracion Continua y TDD" },
+		]
+	}
+}

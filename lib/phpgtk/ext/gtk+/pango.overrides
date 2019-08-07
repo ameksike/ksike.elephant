@@ -1,0 +1,203 @@
+/* vim: set ft=cpp et: */
+
+%%
+headers
+#define PANGO_ENABLE_BACKEND
+#define PANGO_ENABLE_ENGINE
+#include <pango/pango.h>
+
+%%
+ignore-glob
+    *_get_type
+
+%%
+override pango_color_parse
+PHP_METHOD
+{
+    /* TODO */
+}
+
+%%
+ignore
+    pango_font_description_new_from_string
+    pango_font_description_free
+    pango_font_descriptions_free
+
+%%
+add-arginfo PangoFontDescription __construct
+static
+ZEND_BEGIN_ARG_INFO_EX(ARGINFO_NAME, 0, 0, 0)
+    ZEND_ARG_INFO(0, str)
+ZEND_END_ARG_INFO();
+
+%%
+override pango_font_description_new
+PHP_METHOD
+{
+	char *str = NULL;
+	PangoFontDescription *wrapped_obj = NULL;
+    phpg_gboxed_t *pobj = NULL;
+
+	if (!php_gtk_parse_args(ZEND_NUM_ARGS(), "|s", &str)) {
+        PHPG_THROW_CONSTRUCT_EXCEPTION(PangoFontDescription);
+	}
+
+    if (str) {
+        wrapped_obj = pango_font_description_from_string(str);
+    } else {
+        wrapped_obj = pango_font_description_new();
+    }
+	if (!wrapped_obj) {
+        PHPG_THROW_CONSTRUCT_EXCEPTION(PangoFontDescription);
+	}
+
+    pobj = zend_object_store_get_object(this_ptr TSRMLS_CC);
+    pobj->gtype = PANGO_TYPE_FONT_DESCRIPTION;
+    pobj->boxed = wrapped_obj;
+    pobj->free_on_destroy = TRUE;
+}
+
+%% {{{ PangoFontFace
+
+%%
+override pango_font_face_list_sizes
+PHP_METHOD
+{
+    int *sizes, n_sizes, i;
+
+    NOT_STATIC_METHOD();
+
+    if (!php_gtk_parse_args(ZEND_NUM_ARGS(), ""))
+        return;
+
+    pango_font_face_list_sizes(PANGO_FONT_FACE(PHPG_GOBJECT(this_ptr)), &sizes, &n_sizes);
+
+    array_init(return_value);
+    for (i = 0; i < n_sizes; i++) {
+        add_next_index_long(return_value, sizes[i]);
+    }
+
+    g_free(sizes);
+}
+
+%% }}}
+
+%% {{{ PangoLayout
+
+%%
+override pango_layout_get_pixel_extents
+PHP_METHOD
+{
+    PangoRectangle ink, logical;
+
+    NOT_STATIC_METHOD();
+
+    if (!php_gtk_parse_args(ZEND_NUM_ARGS(), ""))
+        return;
+
+    pango_layout_get_pixel_extents(PANGO_LAYOUT(PHPG_GOBJECT(this_ptr)), &ink, &logical);
+
+    php_gtk_build_value(&return_value, "((iiii)(iiii))", ink.x, ink.y, ink.width,
+                        ink.height, logical.x, logical.y, logical.width,
+                        logical.height);
+}
+
+%%
+override pango_layout_get_pixel_size
+PHP_METHOD
+{
+    int height, width;
+
+    NOT_STATIC_METHOD();
+
+    if (!php_gtk_parse_args(ZEND_NUM_ARGS(), ""))
+        return;
+
+    pango_layout_get_pixel_size(PANGO_LAYOUT(PHPG_GOBJECT(this_ptr)), &height, &width);
+
+    php_gtk_build_value(&return_value, "(ii)", height, width);
+}
+
+%%
+override pango_layout_get_size
+PHP_METHOD
+{
+    int height, width;
+
+    NOT_STATIC_METHOD();
+
+    if (!php_gtk_parse_args(ZEND_NUM_ARGS(), ""))
+        return;
+
+    pango_layout_get_size(PANGO_LAYOUT(PHPG_GOBJECT(this_ptr)), &height, &width);
+
+    php_gtk_build_value(&return_value, "(ii)", height, width);
+}
+
+%%
+override pango_layout_get_line
+PHP_METHOD
+{
+    PangoLayoutLine *line;
+    int num, max;
+
+    NOT_STATIC_METHOD();
+
+    if (!php_gtk_parse_args(ZEND_NUM_ARGS(), "i", &num))
+        return;
+
+    max = pango_layout_get_line_count(PANGO_LAYOUT(PHPG_GOBJECT(this_ptr)));
+
+    if ((num < 1) || (num > max)) {
+        php_error(E_WARNING, "%s::%s() expects number argument to be between 0 and the maximum number of lines (as given by get_line_count)",
+            get_active_class_name(NULL TSRMLS_CC), get_active_function_name(TSRMLS_C));
+        return;
+    }
+
+    line = pango_layout_get_line(PANGO_LAYOUT(PHPG_GOBJECT(this_ptr)), num);
+
+    phpg_gobject_new(&return_value, G_OBJECT(line) TSRMLS_CC);
+}
+
+%%
+override pango_layout_get_lines
+PHP_METHOD
+{
+    GSList *list, *tmp;
+
+    NOT_STATIC_METHOD();
+
+    if (!php_gtk_parse_args(ZEND_NUM_ARGS(), ""))
+        return;
+
+    list = pango_layout_get_lines(PANGO_LAYOUT(PHPG_GOBJECT(this_ptr)));
+
+    array_init(return_value);
+    for (tmp = list; tmp; tmp = tmp->next) {
+        zval *line = NULL;
+        phpg_gobject_new(&line, G_OBJECT(tmp->data) TSRMLS_CC);
+        add_next_index_zval(return_value, line);
+    }
+}
+
+%%
+override pango_layout_xy_to_index
+PHP_METHOD
+{
+    int x, y, index, trailing;
+    gboolean res;
+
+    NOT_STATIC_METHOD();
+
+    if (!php_gtk_parse_args(ZEND_NUM_ARGS(), "ii", &x, &y))
+        return;
+
+    res = pango_layout_xy_to_index(PANGO_LAYOUT(PHPG_GOBJECT(this_ptr)), x, y, &index, &trailing);
+
+    if (res)
+        php_gtk_build_value(&return_value, "(ii)", index, trailing);
+    else
+        RETVAL_BOOL(res);
+}
+
+%% }}}

@@ -1,0 +1,42 @@
+"taxonomy": [
+	{name: "cfg", "description":"contenedor de configuraciones", type:"dir"},
+	{name: "mtd", "description":"contenedor de metadatos", type:"dir"},
+	{name: "log", "description":"contenedor de registro de susesos", type:"dir"},
+	{name: "src", "description":"contenedor del codigo fuente ", type:"dir", "taxonomy":[
+			{name: "js", "description":"contenedor del codigo duente del API Javascript", type:"dir" , "taxonomy":[
+				{name: "base", "description":"contenedor del codigo fuente de las clases bases ", type:"dir"},
+				{name: "filter", "description":"contenedor del codigo fuente de las clases filtradas", type:"dir"},
+				{name: "package", "description":"contenedor del codigo fuente de los paquetes", type:"dir"}
+			]},
+			{name: "php", "description":"contenedor del codigo duente del API PHP", type:"dir"},
+			{name: "python", "description":"contenedor del codigo duente del API Python", type:"dir"},
+	] }
+]
+
+<taxonomy>
+	<elem>
+		<name>cfg</name>
+		<description>mtd</description>
+	</elem>
+	<elem>
+		<name>src</name>
+		<description>mtd</description>
+		<taxonomy>
+			<elem>
+				<name>cfg</name>
+				<description>mtd</description>
+			</elem>		
+		</taxonomy>
+	</elem>
+</taxonomy>
+
+<taxonomy>
+	<cfg description=""/>
+	<src description="">
+			<cfg description=""/>
+	</src>
+</taxonomy>
+
+
+["taxonomy"][1]["taxonomy"][0]["description"]
+["taxonomy"]["src"]["cfg"]["atrivute"]["description"] = 
