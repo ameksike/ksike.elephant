@@ -1,7 +1,7 @@
 # Ksike Elephant Framework
 Ksike Framework Elephant series, consists of a specialized framework for the PHP programming language, which incorporates a group of well structured architectural and design patterns, taking up the best practices of other frameworks of different technologies.
 
-![Screenshot](README/ksike_book_elephant.png)
+![Screenshot](README/portadas_carta_130120_rhino.jpg)
 
 There are other editions of this framework oriented to other technologies such as PHP, JAVA, Python. The main idea is to keep the same concepts in the development of computer applications.
 
