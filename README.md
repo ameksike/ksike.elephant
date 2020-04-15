@@ -1,7 +1,7 @@
 # Ksike Elephant Framework
 Ksike Framework Elephant series, consists of a specialized framework for the PHP programming language, which incorporates a group of well structured architectural and design patterns, taking up the best practices of other frameworks of different technologies.
 
-the develoments with Ksike it is a web application that has many of the characteristics of desktop application software. The concept is closely related to a single-page application, and may allow the user interactive features such as drag and drop, background menu, WYSIWYG editing, etc. HTML5 is a current standard for delivering rich web applications, supported by all major browsers. 
+The develoments with Ksike it is a web application that has many of the characteristics of desktop application software. The concept is closely related to a single-page application, and may allow the user interactive features such as drag and drop, background menu, WYSIWYG editing, etc. HTML5 is a current standard for delivering rich web applications, supported by all major browsers. 
 
 ![Screenshot](README/portadas_carta_130120_elephant.jpg)
 
